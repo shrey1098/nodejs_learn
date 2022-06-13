@@ -1,5 +1,4 @@
-
-let{people} = require('../data')
+import {people} from '../data.js';
 const getPeople = (req, res)=>{
   res.status(200).json({'success':true, 'data':people})
 }
@@ -55,7 +54,7 @@ const deletePeople = (req, res)=>{
   return res.status(200).json({success:true, data:deletePerson})
   }
 
-  module.exports = {
+  export {
     getPeople,
     createPerson,
     createPersonPostman,

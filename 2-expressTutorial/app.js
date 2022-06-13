@@ -1,9 +1,11 @@
-const express = require("express")
+import express from "express";
+import morgan from "morgan";
+import {people} from'./routes/people.js';
+import {login} from './routes/auth.js';
+
 const app = express()
-const morgan = require('morgan')
-const port = 4040
-const people = require('./routes/people')
-const login = require('./routes/auth')
+const port = 8000
+
 
 app.use(morgan('tiny'))
 //static assets

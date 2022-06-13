@@ -1,12 +1,13 @@
-const express = require('express')
+import express from "express";
 const router = express.Router()
-const {
+import {
   getPeople,
   createPerson,
   createPersonPostman,
   updatePerson,
-  deletePeople
-} = require('../controllers/people')
+  deletePeople}
+from '../controllers/people.js'
+
 
 
 //router.get('/',getPeople)
@@ -22,4 +23,6 @@ const {
 router.route('/').get(getPeople).post(createPerson)
 router.route('/postman').post(createPersonPostman)
 router.route('/:id').put(updatePerson).delete(deletePeople)
-module.exports =router
+export {
+  router as people
+}
